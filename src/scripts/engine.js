@@ -35,6 +35,7 @@ function countDown() {
         clearInterval(state.actions.countDownTimerId);
         clearInterval(state.actions.timerId);
         alert("Game Over! O seu resultado foi: " + state.values.result);
+        state.view.playAgain.style.display = 'block';
     }
 };
 
