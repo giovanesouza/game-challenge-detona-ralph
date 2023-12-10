@@ -6,6 +6,7 @@ const state = {
         enemy: document.querySelector(".enemy"), // Onde vai aparecer o inimigo
         timeLeft: document.querySelector("#time-left"), // Tempo
         score: document.querySelector("#score"), // Pontuação
+        lives: document.querySelector("#lives"), // total de vidas
     },
     // Variáveis do jogo - guardam valores
     values: {
@@ -13,6 +14,7 @@ const state = {
         hitPosition: 0, // Posição do inimigo
         result: 0, // Pontuação
         curretTime: 60, // Tempo do jogo
+        lives: 3, // total de vidas
     },
     // Executa as funções a cada 1000ms
     actions: {
@@ -64,6 +66,7 @@ function randomSquare() {
 function addListenerHitBox() {
     state.view.squares.forEach((square) => {
         square.addEventListener("mousedown", () => {
+            // Acertou o inimigo
             if (square.id === state.values.hitPosition) {
                 state.values.result++;
                 state.view.score.textContent = state.values.result;
@@ -71,6 +74,20 @@ function addListenerHitBox() {
 
                 // Cada vez que acertar o inimigo toca o áudio
                 playSound("hit");
+
+                // Errou o inimigo
+            } else {
+
+                let lives = --state.values.lives;
+                // console.log(lives);
+
+                if (lives > -1)
+                    state.view.lives.textContent = lives;
+
+                if(lives === 0) {
+                    state.values.curretTime = 1;
+                }
+
             }
         });
     });
