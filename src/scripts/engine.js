@@ -7,6 +7,7 @@ const state = {
         timeLeft: document.querySelector("#time-left"), // Tempo
         score: document.querySelector("#score"), // Pontuação
         lives: document.querySelector("#lives"), // total de vidas
+        playAgain: document.querySelector("#play-again"), // opção para jogar novamente
     },
     // Variáveis do jogo - guardam valores
     values: {
@@ -84,15 +85,15 @@ function addListenerHitBox() {
                 if (lives > -1)
                     state.view.lives.textContent = lives;
 
-                if(lives === 0) {
+                if (lives === 0) {
                     state.values.curretTime = 1;
+                    state.view.playAgain.style.display = 'block';
                 }
-
+                
             }
         });
     });
 };
-
 
 
 //  Dá o start no jogo

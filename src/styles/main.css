@@ -1,50 +1,72 @@
 .container {
-    display: flex;
-    flex-direction: column;
-    height: 100vh;
-    background-image: url("../images/wall.png");
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background-image: url("../images/wall.png");
 }
 
 .menu {
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-  
-    height: 90px;
-    width: 100%;
-    background-color: #000;
-    color: #fff;
-    border-bottom: 5px solid #ffd700;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+
+  height: 90px;
+  width: 100%;
+  background-color: #000;
+  color: #fff;
+  border-bottom: 5px solid #ffd700;
 }
 
 .panel {
-    margin-top: 1rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
+  margin-top: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
-  .square {
-    height: 150px;
-    width: 150px;
-    border: 1px solid #000;
-    background-color: #1aeaa5;
-  }
-  
-  /* Add img do ralph na div que deve ser clicada */
-  .enemy {
-    background-image: url("../images/ralph.png");
-    background-size: cover;
-  }
+.square {
+  height: 150px;
+  width: 150px;
+  border: 1px solid #000;
+  background-color: #1aeaa5;
+}
 
-  .menu-lives {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  /* Add margem no 2º filho h2 */
-  .menu-time h2:nth-child(2),
-  .menu-score h2:nth-child(2) {
-    margin-top: 1rem;
-  }
+/* Add img do ralph na div que deve ser clicada */
+.enemy {
+  background-image: url("../images/ralph.png");
+  background-size: cover;
+}
+
+.menu-lives {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Add margem no 2º filho h2 */
+.menu-time h2:nth-child(2),
+.menu-score h2:nth-child(2) {
+  margin-top: 1rem;
+}
+
+#play-again {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #272323b0;
+  z-index: 9999;
+
+  display: none;
+}
+
+#restart {
+  position: absolute;
+  top: 50%;
+  right: 50%;
+  transform: translate(50%, 50%);
+
+  padding: 1rem;
+  cursor: pointer;
+}
